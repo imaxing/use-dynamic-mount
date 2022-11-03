@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="dist/index.umd.js"></script>
+    <style>
+      #app {
+        width: 400px;
+        height: 400px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="handleTest">测试挂载</button>
+    </div>
+    <div id="message-app"></div>
+    <script>
+      const dnamicMount = useDnamicMount();
+      Vue.use(dnamicMount, {
+        name: "$message",
+        extend: {
+          data: () => ({ text: "" }),
+          render(h) {
+            return h("button", this.text);
+          },
+        },
+      });
+      new Vue({
+        el: "#app",
+        methods: {
+          handleTest() {
+            this.$message({ text: "哈哈哈" + Date.now() });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
