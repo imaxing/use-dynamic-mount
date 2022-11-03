@@ -1,7 +1,5 @@
 # 动态挂载 vue 示例
 
-> 无论是否选择了文件, 关闭后自动移除 input element
-
 #### Installtion
 
 ```bash
