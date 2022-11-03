@@ -13,23 +13,23 @@ import Vue from "vue";
 import useDnamicMount from "use-dnamic-mount";
 
 Vue.use(useDnamicMount(), {
-  name: "$renderButton",
+  name: "$toast",
   extend: {
-    data: () => ({ text: "" }),
+    data: () => ({ message: "" }),
     render(h) {
-      return h("button", this.text);
+      return h("span", this.message);
     },
   },
 });
 
-this.$renderButton({ text: "hello world" });
+this.$toast({ message: "hello world" });
 ```
 
 #### Options
 
-| 参数名    | 说明                 | 默认值 |
+| 参数名    | 说明                 | 类型 | 默认值 |
 | --------- | -------------------- | ------ | -------------- |
-| name      | 方法名               | \*     | $dnamicMount   |
-| extend    | 挂载的组件 (必填)    | -      | -              |
-| nextTick  | 挂载后的回调         | -      | -              |
-| className | 挂载节点自定义 class | -      | dnamic-element |
+| name      | 方法名               | String     | $dnamicMount   |
+| extend    | 挂载的组件 (必填)    | VNode      | -              |
+| nextTick  | 挂载后的回调         | Function      | -              |
+| className | 挂载节点自定义 class | String      | dnamic-element |
