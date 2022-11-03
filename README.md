@@ -1,4 +1,4 @@
-# 动态挂载 vue 示例
+# 动态挂载 vue 组件
 
 #### Installtion
 
@@ -33,3 +33,8 @@ this.$toast({ message: "hello world" });
 | extend    | 挂载的组件 (必填)    | VNode      | -              |
 | nextTick  | 挂载后的回调         | Function      | -              |
 | className | 挂载节点自定义 class | String      | dnamic-element |
+
+
+#### Example
+
+[![Edit keen-butterfly-f1ml2l](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/keen-butterfly-f1ml2l?fontsize=14&hidenavigation=1&theme=dark)
