@@ -3,7 +3,7 @@
 #### Installtion
 
 ```bash
-npm i dnamic-mount
+npm i use-dnamic-mount
 ```
 
 #### Usage
