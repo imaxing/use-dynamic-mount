@@ -3,16 +3,16 @@
 #### Installtion
 
 ```bash
-npm i use-dnamic-mount
+npm i use-dynamic-mount
 ```
 
 #### Usage
 
 ```js
 import Vue from "vue";
-import useDnamicMount from "use-dnamic-mount";
+import useDynamicMount from "use-dynamic-mount";
 
-Vue.use(useDnamicMount(), {
+Vue.use(useDynamicMount(), {
   name: "$toast",
   extend: {
     data: () => ({ message: "" }),
@@ -29,10 +29,10 @@ this.$toast({ message: "hello world" });
 
 | 参数名    | 说明                 | 类型 | 默认值 |
 | --------- | -------------------- | ------ | -------------- |
-| name      | 方法名               | String     | $dnamicMount   |
+| name      | 方法名               | String     | $dynamicMount   |
 | extend    | 挂载的组件 (必填)    | VNode      | -              |
 | nextTick  | 挂载后的回调         | Function      | -              |
-| className | 挂载节点自定义 class | String      | dnamic-element |
+| className | 挂载节点自定义 class | String      | dynamic-element |
 
 
 #### Example

@@ -7,7 +7,7 @@ export default [
   {
     input: "src/main.js",
     output: {
-      name: "useDnamicMount",
+      name: "useDynamicMount",
       file: pkg.browser,
       format: "umd",
     },

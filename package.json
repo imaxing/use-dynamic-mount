@@ -1,5 +1,5 @@
 {
-  "name": "use-dnamic-mount",
+  "name": "use-dynamic-mount",
   "version": "1.0.0",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
@@ -12,7 +12,8 @@
     "rollup-plugin-terser": "7.0.2"
   },
   "keywords": [
-    "dnamic mount",
+    "dynamic mount",
+    "dynamic mount vue component",
     "动态挂载vue组件"
   ],
   "scripts": {

@@ -1,15 +1,15 @@
 export default () => ({
   install(Vue, config = {}) {
     const {
-      name = "$dnamicMount",
-      className = "dnamic-element",
+      name = "$dynamicMount",
+      className = "dynamic-element",
       extend,
       nextTick,
     } = config;
     if (!extend) return;
     Vue.prototype[name] = (options) => {
-      const DnamicComponentConstructor = Vue.extend(extend);
-      const app = new DnamicComponentConstructor({
+      const DynamicComponentConstructor = Vue.extend(extend);
+      const app = new DynamicComponentConstructor({
         data: () => ({
           ...options,
           destroy: () => {
