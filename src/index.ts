@@ -12,7 +12,7 @@ export interface MountReturnValue {
   destroy: () => void
 }
 
-export default {
+export default () => ({
   install(Vue: any, options?: DynamicMountOptions) {
     const { name = '$dynamicMount', className = 'dynamic-element', extend, nextTick } = options || {}
     if (!extend) return
@@ -45,4 +45,4 @@ export default {
       }
     }
   }
-}
+})
