@@ -27,12 +27,13 @@ this.$toast({ message: 'hello world' })
 
 #### Options
 
-| 参数名    | 说明                 | 类型     | 默认值          |
-| --------- | -------------------- | -------- | --------------- |
-| name      | 方法名               | String   | $dynamicMount   |
-| extend    | 挂载的组件 (必填)    | VNode    | -               |
-| nextTick  | 挂载后的回调         | Function | -               |
-| className | 挂载节点自定义 class | String   | dynamic-element |
+| 参数名        | 说明                 | 类型                | 默认值          |
+| ------------- | -------------------- | ------------------- | --------------- |
+| name          | 方法名               | String              | $dynamicMount   |
+| extend        | 挂载的组件 (必填)    | VNode               | -               |
+| nextTick      | 挂载后的回调         | Function            | -               |
+| className     | 挂载节点自定义 class | String              | dynamic-element |
+| defaultOption | extand 组件默认配置  | Record<string, any> | {}              |
 
 #### Example
 

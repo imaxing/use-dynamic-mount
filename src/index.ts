@@ -2,6 +2,7 @@ export interface DynamicMountOptions {
   name?: string
   className?: string
   extend?: any
+  defaultOption?: Record<string, any>
   nextTick?: () => void
 }
 
@@ -14,13 +15,20 @@ export interface MountReturnValue {
 
 export default () => ({
   install(Vue: any, options?: DynamicMountOptions) {
-    const { name = '$dynamicMount', className = 'dynamic-element', extend, nextTick } = options || {}
+    const {
+      name = '$dynamicMount',
+      className = 'dynamic-element',
+      extend,
+      nextTick,
+      defaultOption = {}
+    } = options || {}
     if (!extend) return
 
     Vue.prototype[name] = (options: any): MountReturnValue => {
       const DynamicComponent = Vue.extend(extend)
       const app = new DynamicComponent({
         data: () => ({
+          ...defaultOption,
           ...options,
           destroy: () => destroy()
         })
@@ -29,6 +37,7 @@ export default () => ({
       const destroy = () => {
         app.$el.remove()
         app.$destroy()
+        options.onDestroy?.()
       }
 
       const div = document.createElement('div')
@@ -40,7 +49,7 @@ export default () => ({
       return {
         app,
         destroy,
-        close: () => app.close && app.close(),
+        close: () => app.close?.(),
         component: () => app.$refs.component
       }
     }
