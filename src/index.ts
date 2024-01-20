@@ -2,6 +2,7 @@ export interface DynamicMountOptions {
   name?: string
   className?: string
   extend?: any
+  parent?: any
   defaultOption?: Record<string, any>
   nextTick?: () => void
 }
@@ -19,6 +20,7 @@ export default () => ({
       name = '$dynamicMount',
       className = 'dynamic-element',
       extend,
+      parent,
       nextTick,
       defaultOption = {}
     } = options || {}
@@ -27,6 +29,7 @@ export default () => ({
     Vue.prototype[name] = (options: any): MountReturnValue => {
       const DynamicComponent = Vue.extend(extend)
       const app = new DynamicComponent({
+        parent,
         data: () => ({
           ...defaultOption,
           ...options,
