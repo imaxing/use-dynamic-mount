@@ -33,7 +33,7 @@ this.$toast({ message: 'hello world' })
 | extend        | 挂载的组件 (必填)    | VNode               | -               |
 | nextTick      | 挂载后的回调         | Function            | -               |
 | className     | 挂载节点自定义 class | String              | dynamic-element |
-| defaultOption | extand 组件默认配置  | Record<string, any> | {}              |
+| defaultOption | extend 组件默认配置  | Record<string, any> | {}              |
 
 #### Example
 
