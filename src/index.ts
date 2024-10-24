@@ -26,9 +26,10 @@ export default () => ({
     } = options || {}
     if (!extend) return
 
-    Vue.prototype[name] = (options: any): MountReturnValue => {
+    Vue.prototype[name] = (options: any = {}): MountReturnValue => {
       const DynamicComponent = Vue.extend(extend)
       const app = new DynamicComponent({
+        prototype: Vue.prototype,
         parent,
         data: () => ({
           ...defaultOption,
